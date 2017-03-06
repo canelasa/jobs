@@ -1,1 +1,9 @@
-<h1>jobs list</h1>
+<% @jobs.each do |job| %>
+  <div class="booyah-box col-10 offset-1">
+    <h1><%= job.name %></h1><br />
+    <i><%= job.address %></i><br />
+    <p><%= job.city %></p><br />
+    <p><%= job.state %></p><br />
+    <p><%= job.description %></p><br />
+  </div>
+<% end %>
