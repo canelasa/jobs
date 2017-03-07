@@ -1,0 +1,19 @@
+<div class="booyah-box col-10 offset-1">
+  <h1><%= @job.name %></h1>
+  <i><%= @job.address %> <%= @job.city %>,<%= @job.state %></i>
+  <br/><br/>
+  <h1><%= @job.title %></h1>
+  <h3>DESCRIPTION</h3>
+  <p><%= @job.description %></p>
+  <h3>RESPONSIBILITIES</h3>
+  <P><%= @job.responsibilities %></p>
+  <h3>REQUIREMENTS</h3>
+  <p><%= @job.requirements %></p>
+  <h3>SKILLS</h3>
+  <p><%= @job.skills %></p>
+  <h3>MAJORS</h3>
+  <p><%= @job.majors %></p>
+  <div class="float-right">
+    <%= link_to 'Edit', edit_job_path(@job), class: 'btn btn-primary' %>
+  </div>
+</div>

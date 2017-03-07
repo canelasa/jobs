@@ -2,7 +2,7 @@
 <h1>Internships available</h1>
 <% @jobs.each do |job| %>
   <div class="booyah-box col-10 offset-1">
-    <h1><%= job.name %></h1><br />
+    <h1><%=link_to job.name, job_path(job) %></h1><br />
     <i><%= job.address %></i><br />
     <p><%= job.city %></p><br />
     <p><%= job.state %></p><br />
