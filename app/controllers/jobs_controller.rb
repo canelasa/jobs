@@ -24,19 +24,23 @@ class JobsController < ApplicationController
   def edit
     @job = Job.find(params[:id])
 
-    if @place.user != current_user
+    if @job.user != current_user
       return render text: 'Not Allowed', status: :forbidden
     end
   end
 
   def update
     @job = Job.find(params[:id])
-    if @place.user != current_user
+    if @job.user != current_user
       return render text: 'Not Allowed', status: :forbidden
     end
 
     @job.update_attributes(job_params)
-    redirect_to job_path
+    if @job.valid?
+      redirect_to jobs_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
