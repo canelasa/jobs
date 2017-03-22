@@ -23,7 +23,7 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
-
+    
     if @job.user != current_user
       return render text: 'Not Allowed', status: :forbidden
     end

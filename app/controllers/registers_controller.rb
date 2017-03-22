@@ -1,5 +1,12 @@
 class RegistersController < ApplicationController
   before_action :authenticate_user!
+  def index
+    @registers = Register.all
+  end
+
+  def show
+    @register = Register.find(params[:id])
+  end
 
   def new
     @job = Job.find(params[:job_id])

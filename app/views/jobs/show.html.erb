@@ -22,35 +22,4 @@
   </div>
 </div>
 
-<h1 class="text-center">Applicants</h1>
-
-<div class="booyah-box col-xs-10 col-xs-offset-1">
-<table class="table table-hover">
-    <thead>
-
-      <tr>
-        <th>Job Post</th>
-        <th>Name</th>
-        <th>Phone Number</th>
-        <th>Email</th>
-        <th>Action<th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @job.registers.each do |register| %>
-        <% if job.register.present? %>
-          <tr>
-            <td><%= link_to comment.lesson.name, lesson_path(comment.lesson) %></td>
-            <td> <%= comment.full_name %></td>
-            <td><%= comment.phone_number %></td>
-            <td><%= comment.email %></td>
-            <td><%= link_to 'Destroy', lesson_comment_path(comment.lesson, comment),
-            method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger btn-xs' %></td>
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-</div>
-<div class="clear"></div>
+<h4 class="col-10 offset-1"><%= @job.registers.count %> Applicants</h1>
