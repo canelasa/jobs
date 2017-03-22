@@ -31,7 +31,7 @@
             <% end %>
           </li>
         </ul>
-        <ul class="navbar-nav float-md-right">
+        <!-- <ul class="navbar-nav float-md-right">
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
@@ -43,7 +43,7 @@
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search by keyword, major, or city">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </form> -->
 
         <ul class="navbar-nav">
           <% if user_signed_in? %>
@@ -77,9 +77,10 @@
 
     <div id="footer">
       <div class="container">
-        <b>Footer Here</b>
+        <b>FOR</b>
         <br />
-        <%= link_to 'Link', '#' %>
+        <%= link_to 'Students', jobs_path %><br />
+        <%= link_to 'Organizations', new_job_path %>
       </div>
     </div>
   </body>
