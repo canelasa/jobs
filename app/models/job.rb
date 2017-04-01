@@ -5,4 +5,8 @@ class Job < ApplicationRecord
   validates :title, presence: true
   validates :city, presence: true
   validates :description, presence: true
+
+  def self.search(query)
+    where("lower(city) LIKE ? OR lower(title) LIKE ? OR majors LIKE ?", "%#{query.downcase}%", "%#{query.downcase}%", "%#{query.downcase}%")
+  end
 end

@@ -1,7 +1,12 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
-     @jobs = Job.paginate(:page => params[:page], :per_page => 2)
+     if params[:search]
+       jobs = Job.search(params[:search])
+     else
+       jobs = Job.all
+     end
+     @jobs = jobs.paginate(:page => params[:page], :per_page => 2)
   end
 
   def new

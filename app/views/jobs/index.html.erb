@@ -1,9 +1,9 @@
 <br />
 <div class="col-6 offset-3">
-  <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search by keyword, major, or city">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Find Internships!</button>
-  </form>
+  <%= form_tag(jobs_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search for internships by title, major, or city" %>
+  <%= submit_tag "Search" %>
+  <% end %>
 </div>
 <br />
 <div class="booyah-box col-10 offset-1">
@@ -17,16 +17,21 @@
       </div>
     </div
   </div>
-  <% @jobs.each do |job| %>
-    <div class="booyah-box col-10 offset-1" id="jobpost">
-      <h1><%=link_to job.title, job_path(job) %></h1>
-      <h4><%= job.name %></h4>
-      <i><%= job.city %>, <%= job.state %></i><br /><br />
-      <p><%= job.description[0..300] %>...</p><br />
-    </div>
+  <% if @jobs.present? %>
+    <% @jobs.each do |job| %>
+      <div class="booyah-box col-10 offset-1" id="jobpost">
+        <h1><%=link_to job.title, job_path(job) %></h1>
+        <h4><%= job.name %></h4>
+        <i><%= job.city %>, <%= job.state %></i><br /><br />
+        <p><%= job.description[0..300] %>...</p><br />
+      </div>
+    <% end %>
+  <% else %>
+    <p> There are no jobs with that search criteria </p>
   <% end %>
 </div>
 </div>
+
 <br />
 <div class="col-2 offset-5">
   <%= will_paginate %>
