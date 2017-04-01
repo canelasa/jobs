@@ -31,7 +31,9 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'simple_form'
 gem 'devise'
 gem "font-awesome-rails"
-
+# gem 'will_paginate', '~> 3.1.1'
+# gem 'will_paginate-bootstrap'
+gem 'will_paginate-bootstrap4'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

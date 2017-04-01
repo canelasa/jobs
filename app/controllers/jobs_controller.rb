@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
-     @jobs = Job.all
+     @jobs = Job.paginate(:page => params[:page], :per_page => 2)
   end
 
   def new
@@ -23,7 +23,7 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
-    
+
     if @job.user != current_user
       return render text: 'Not Allowed', status: :forbidden
     end
