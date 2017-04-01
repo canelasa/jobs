@@ -1,12 +1,28 @@
 <br />
-<div class="col-10 offset-1">
-  <h1><%= @jobs.count %> Internships Found</h1>
+<div class="col-6 offset-3">
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search by keyword, major, or city">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Find Internships!</button>
+  </form>
 </div>
-<% @jobs.each do |job| %>
-  <div class="booyah-box col-10 offset-1">
-    <h1><%=link_to job.title, job_path(job) %></h1>
-    <h4><%= job.name %></h4>
-    <i><%= job.city %>, <%= job.state %></i><br /><br />
-    <p><%= job.description %></p><br />
+<br />
+<div class="booyah-box col-10 offset-1">
+  <div class="col-10 offset-1">
+    <div class="row">
+      <div class="col-6">
+        <h1><%= @jobs.count %> Internships Found</h1>
+      </div>
+      <div id="sort" class="col-6">
+        <h5> Sort By: Relevance | Date | City | Major </h5>
+      </div>
+    </div
   </div>
-<% end %>
+  <% @jobs.each do |job| %>
+    <div class="booyah-box col-10 offset-1" id="jobpost">
+      <h1><%=link_to job.title, job_path(job) %></h1>
+      <h4><%= job.name %></h4>
+      <i><%= job.city %>, <%= job.state %></i><br /><br />
+      <p><%= job.description[0..300] %>...</p><br />
+    </div>
+  <% end %>
+</div>

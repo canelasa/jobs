@@ -3,15 +3,15 @@
   <i><%= @job.address %> <%= @job.city %>,<%= @job.state %></i><hr>
   <br/><br/>
   <h1><%= @job.title %></h1><hr>
-  <h4>DESCRIPTION</h4><hr>
+  <h5>DESCRIPTION</h5><hr>
   <p><%= @job.description %></p>
-  <h4>RESPONSIBILITIES</h4><hr>
+  <h5>RESPONSIBILITIES</h5><hr>
   <P><%= @job.responsibilities %></p>
-  <h4>REQUIREMENTS</h4><hr>
+  <h5>REQUIREMENTS</h5><hr>
   <p><%= @job.requirements %></p>
-  <h4>SKILLS</h4><hr>
+  <h5>SKILLS</h5><hr>
   <p><%= @job.skills %></p>
-  <h4>MAJORS</h4><hr>
+  <h5>MAJORS</h5><hr>
   <p><%= @job.majors %></p>
   <div class="float-right">
     <% if current_user && current_user == @job.user %>
