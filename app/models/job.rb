@@ -9,4 +9,8 @@ class Job < ApplicationRecord
   def self.search(query)
     where("lower(city) LIKE ? OR lower(title) LIKE ? OR majors LIKE ?", "%#{query.downcase}%", "%#{query.downcase}%", "%#{query.downcase}%")
   end
+
+  def self.order_by_date
+    order(:created_at)
+  end
 end
