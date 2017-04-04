@@ -3,10 +3,22 @@ class JobsController < ApplicationController
   def index
      if params[:search]
        jobs = Job.search(params[:search])
+     elsif params[:sort]
+       jobs = sort_jobs
      else
        jobs = Job.all
      end
      @jobs = jobs.paginate(:page => params[:page], :per_page => 2)
+  end
+
+  def sort_jobs
+    jobs = if params[:sort] == "date"
+      Job.order_by_date
+    elsif params[:sort] == "city"
+      Job.order_by_city
+    else
+      Job.all
+    end
   end
 
   def new

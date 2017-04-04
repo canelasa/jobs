@@ -13,4 +13,17 @@ class Job < ApplicationRecord
   def self.order_by_date
     order(:created_at)
   end
+
+  def posted
+    created_at.strftime("%m/%d/%Y")
+  end
+
+  def self.order_by_city
+    order(:city)
+  end
+
+  def self.order_by_major
+    order(:major)
+  end
+
 end
