@@ -1,11 +1,11 @@
 
 <br />
-<form class="form-inline my-2 my-lg-0 col-6 offset-3">
+<div class="form-inline my-2 my-lg-0 col-6 offset-3">
   <%= form_tag(jobs_path, :method => "get", id: "search-form") do %>
   <%= text_field_tag :search, params[:search], class:"form-control mr-sm-2", placeholder: "Search for internships by title, major, or city" %>
   <%= submit_tag "Search", class:"btn btn-outline-success my-2 my-sm-0" %>
   <% end %>
-</form>
+</div>
 <br />
 <div class="booyah-box col-10 offset-1">
   <div class="col-10 offset-1">

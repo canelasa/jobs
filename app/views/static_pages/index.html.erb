@@ -2,11 +2,15 @@
   <br /><br /><br />
   <div class="frosty col-10 offset-1 text-center">
     <br />
-    <h1>How do you apply what you've learned in school?</h1>
+    <h1>Get real world experience!</h1>
     <br />
-    <h2>Find an Internship!</h2>
-    <br />
-    <%= link_to 'Learn More', jobs_path, class: 'btn btn-success' %>
+    <div id="index_search" class="form-inline my-2 my-lg-0 col-8 offset-2">
+      <%= form_tag(jobs_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], class:"form-control mr-sm-2", placeholder: "What are you looking for?" %>
+      <%= submit_tag "Find Internships" , class:"btn btn-outline-success my-2 my-sm-0" %>
+      <% end %>
+    </div>
+    <!-- <%= link_to 'Find an Internship!', jobs_path, class: 'btn btn-success' %> -->
     <br /><br />
   </div>
 </div>
