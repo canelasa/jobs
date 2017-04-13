@@ -1,6 +1,8 @@
 class Job < ApplicationRecord
   belongs_to :user
   has_many :registers
+  has_many :saves, dependent: :destroy
+  
   validates :name, presence: true
   validates :title, presence: true
   validates :city, presence: true

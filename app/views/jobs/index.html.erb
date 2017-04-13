@@ -29,6 +29,12 @@
         <i><%= job.city %>, <%= job.state %></i><br /><br />
         <p><%= job.description[0..300] %>...</p><br />
         <p>posted: <%= job.posted %></p><br />
+
+      <% if logged_in? %>
+        <%= div_for job do %>
+          <%= render partial: "saves/button", locals: { job: job} %>
+        <% end %>
+      <% end %>
       </div>
     <% end %>
   <% else %>

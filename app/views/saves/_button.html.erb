@@ -1,0 +1,5 @@
+<% if current_user.saved_job?(job) %>
+  <%= link_to "Undo", undo_path(job_id: job.id), remote: true, method: :delete, id:"undo"  %>
+  <% else %>
+  <%= link_to "Save job", save_path(job_id: job.id), remote: true, method: :post, id:"save"  %>
+<% end %>
