@@ -102,12 +102,35 @@ body {
   text-align: right;
 }
 
-.form-inline .form-control {
-    display: inline-block;
-    width: 500px;
-    vertical-align: middle;
+// .form-inline .form-control {
+//     display: inline-block;
+//     width: 500px;
+//     vertical-align: middle;
+// }
+//
+// #index_search {
+//   width: 700px;
+// }
+
+#search_wrapper{
+    background-color:white;
+    position:relative;
+    border: 1px solid black;
+    width: 50%;
 }
 
-#index_search {
-  width: 700px;
+#search_field {
+    background: transparent;
+    border-style: none;
+    width: 350px;
+}
+
+#search_button {
+    position:absolute;
+    display: inline;
+    border: none;
+    text-align: center;
+    top:0;
+    right:0;
+    width:50px;
 }

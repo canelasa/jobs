@@ -54,3 +54,12 @@
     <p><%= job.description %></p><br />
   </div>
 <% end %>
+<h3>My saved jobs </h3>
+<% @user.my_saved_jobs.each do |job| %>
+<div class="booyah-box col-10 offset-1">
+  <h1><%=link_to job.title, job_path(job) %></h1>
+  <h4><%= job.name %></h4>
+  <i><%= job.city %>, <%= job.state %></i><br /><br />
+  <p><%= job.description %></p><br />
+</div>
+<% end %>

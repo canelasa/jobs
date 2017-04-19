@@ -26,12 +26,7 @@ class User < ApplicationRecord
   end
 
   def my_saved_jobs
-    # if self.saves.find_by_job_id(job.id)
-      saved_jobs = []
-      saves.each do |save|
-        saved_jobs << safe.job
-      end
-      return saved_jobs.include?(job)
+      saves.map(&:job)
   end
 
 end

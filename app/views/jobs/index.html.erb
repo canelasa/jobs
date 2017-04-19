@@ -1,9 +1,11 @@
 
 <br />
-<div class="form-inline my-2 my-lg-0 col-6 offset-3">
+<div id="search_wrapper" class="form-inline my-2 my-lg-0 col-6 offset-3">
   <%= form_tag(jobs_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], class:"form-control mr-sm-2", placeholder: "Search for internships by title, major, or city" %>
-  <%= submit_tag "Search", class:"btn btn-outline-success my-2 my-sm-0" %>
+  <%= text_field_tag :search, params[:search], id:"search_field", class:"form-control mr-sm-2", placeholder: "Search for internships by title, major, or city" %>
+  <%= button_tag(type: "submit", id:"search_button", class:"btn btn-outline-success my-2 my-sm-0") do %>
+      <i class="fa fa-search"></i>
+    <% end %>
   <% end %>
 </div>
 <br />
